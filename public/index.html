@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reproductor de Video con Comentarios</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container fullscreen-container">
+      <div class="video-overlay-container fullscreen-video">
+        <video id="videoPlayer" controls></video>
+        <div class="video-top-overlay">
+          <div class="subs-bar-container">
+            <span class="subs-label">Subs</span>
+            <div class="subs-bar-bg">
+              <div class="subs-bar-fill" id="subsBarFill"></div>
+            </div>
+            <span class="subs-count" id="subsCount">2213 / 3000</span>
+          </div>
+          <div class="live-indicator-overlay center-live-indicator">
+            <span class="live-dot"></span> LIVE STREAMING
+            <div id="userCount" class="user-count">👥 0 conectados</div>
+          </div>
+          <button id="toggleCommentsBtn" class="toggle-comments-btn" title="Mostrar/Ocultar comentarios">💬</button>
+        </div>
+        <div id="reactionsOverlay" class="reactions-overlay"></div>
+        <div id="commentsOverlay" class="comments-overlay"></div>
+      </div>
+    </div>
+
+    <div class="file-selector" id="fileSelectorMenu">
+      <div class="file-input-group">
+        <label for="videoFile">Seleccionar Video</label>
+        <input type="file" id="videoFile" accept=".mp4" title="Selecciona un archivo de video .mp4" />
+        <small>Formatos soportados: .mp4</small>
+      </div>
+      <div class="file-input-group">
+        <label for="srtFile">Seleccionar Comentarios</label>
+        <input type="file" id="srtFile" accept=".srt" title="Selecciona un archivo de comentarios .srt" />
+        <small>Formatos soportados: .srt</small>
+      </div>
+    </div>
+
+    <button id="showFileMenuBtn" class="show-file-menu-btn" style="display: none" title="Mostrar menú de selección">🎬</button>
+    <div class="comment-size-slider-container">
+      <label for="commentSizeSlider">Tamaño comentarios</label>
+      <input type="range" id="commentSizeSlider" min="14" max="40" value="22" />
+    </div>
+
+    <div id="welcomePopups" class="welcome-popups-overlay"></div>
+
+    <script src="js/videoPlayer.js"></script>
+    <script src="js/comments.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
